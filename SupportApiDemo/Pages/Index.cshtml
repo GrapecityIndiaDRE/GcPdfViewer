@@ -1,0 +1,90 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Pdf Editor Demo";
+}
+<style>
+    #host {
+        height: 100%;
+    }
+@@media (max-width:500px) {
+    .main-container {
+        padding: 0px;
+    }
+}
+</style>
+<button onclick="addSignature()">Add Signature</button>
+<div id="host"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/5.0.0/signalr.min.js" integrity="sha512-ktPnERrVwYTf4LgWInsccl9OsKyZsUEv4y4GkWAkXUqlpCQlP2W/f2A+4ix03il0M5OMwT3SstzAILmeLHT0wg==" crossorigin="anonymous"></script>
+<script src="~/lib/gc-pdfviewer/build/gcpdfviewer.js" asp-append-version="true"></script>
+
+<script id="js-sample-code">
+    function getHashValue(key) {
+        var matches = location.hash.match(new RegExp(key+'=([^&]*)'));
+        return matches ? matches[1] : null;
+    }
+    var viewer;
+    var options = {
+        supportApi: {
+            apiUrl: 'api/pdf-viewer',
+            token: 'support-api-demo-net-core-token-2021',
+            reconnectInterval: 1000
+        },
+        logLevel: 'Debug',
+        userName: getHashValue('user') || 'Anonymous'
+    };
+    if (window.createPdfViewer) {
+        viewer = window.createPdfViewer("#host", options);
+    } else {
+        if (options.userName === "Anonymous") {
+            options.userName = prompt("Please, input your name", options.userName) || "Anonymous";
+        }
+        viewer = new GcPdfViewer("#host", options);
+        viewer.addDefaultPanels();
+        viewer.addSharedDocumentsPanel();
+        @SupportApiDemo.Utils.GcPdfViewerRenderHelper.RenderOptions(GcPdfViewerSupportApiDemo.Samples.SamplePdfCreator.GetViewerOptions())
+        viewer.beforeUnloadConfirmation = true;
+    }
+    window["viewer"] = viewer;
+    viewer.onAfterOpen.register(function () {
+        addSignature();        
+    });    
+    function addSignature() {
+        viewer.options.signTool = {
+            afterAdd: function (result) {
+                var index = result.pageIndex;
+                var annot = result.annotation;
+                //add annotation on pages as the signature is added for a page
+               for (let i = 0; i < viewer.pageCount; i++) {
+                   if (i != index) {
+                       viewer.addAnnotation(i, addSignatureAnnotation(annot, i));                       
+                   }
+               }
+               return true;
+            }
+
+        }
+    }
+    function addSignatureAnnotation(annot,index) {
+        var cloned = JSON.parse(JSON.stringify(annot))
+        return {
+            annotationType: 13, // AnnotationTypeCode.Stamp
+            fileName: cloned.fileName,
+            fileId:cloned.fileId,
+            subject: 'Stamp' + index,
+            opacity: 1,
+            id: (11*index)+"R",
+            rect: cloned.rect
+        };
+    }
+   
+    // Viewer opened.
+    if (viewer.then) {
+        viewer.then(function (resolvedViewer) {
+            viewer = resolvedViewer;
+            viewer.open("api/pdf-viewer/get-sample-pdf");
+        });
+    } else {
+        viewer.open("api/pdf-viewer/get-sample-pdf");
+    }
+</script>

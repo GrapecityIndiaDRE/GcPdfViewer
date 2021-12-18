@@ -1,0 +1,161 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Configurations>Debug;Release</Configurations>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="lib\**" />
+    <Compile Remove="LocalizationChecker\**" />
+    <Compile Remove="node_modules\**" />
+    <EmbeddedResource Remove="lib\**" />
+    <EmbeddedResource Remove="LocalizationChecker\**" />
+    <EmbeddedResource Remove="node_modules\**" />
+    <None Remove="lib\**" />
+    <None Remove="LocalizationChecker\**" />
+    <None Remove="node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Localization\Images\Stamps_ja\Dynamics\received-01.png" />
+    <None Remove="Localization\Images\Stamps_ja\Dynamics\received.png" />
+    <None Remove="Localization\Images\Stamps_ja\Dynamics\reviewed-01.png" />
+    <None Remove="Localization\Images\Stamps_ja\Dynamics\reviewed.png" />
+    <None Remove="Localization\Images\Stamps_ja\Dynamics\revised-01.png" />
+    <None Remove="Localization\Images\Stamps_ja\Dynamics\revised.png" />
+    <None Remove="Localization\Images\Stamps_ja\Sign\checkMark.png" />
+    <None Remove="Localization\Images\Stamps_ja\Sign\crossMark.png" />
+    <None Remove="Localization\Images\Stamps_ja\Sign\initialHere.png" />
+    <None Remove="Localization\Images\Stamps_ja\Sign\signHere.png" />
+    <None Remove="Localization\Images\Stamps_ja\Sign\witness.png" />
+    <None Remove="Localization\Images\Stamps_ja\Standard\approved.png" />
+    <None Remove="Localization\Images\Stamps_ja\Standard\completed.png" />
+    <None Remove="Localization\Images\Stamps_ja\Standard\confidential.png" />
+    <None Remove="Localization\Images\Stamps_ja\Standard\draft.png" />
+    <None Remove="Localization\Images\Stamps_ja\Standard\final.png" />
+    <None Remove="Localization\Images\Stamps_ja\Standard\forComment.png" />
+    <None Remove="Localization\Images\Stamps_ja\Standard\forPublicRelease.png" />
+    <None Remove="Localization\Images\Stamps_ja\Standard\informationsOnly.png" />
+    <None Remove="Localization\Images\Stamps_ja\Standard\notApproved.png" />
+    <None Remove="Localization\Images\Stamps_ja\Standard\notForPublicRelease.png" />
+    <None Remove="Localization\Images\Stamps_ja\Standard\preliminaryResults.png" />
+    <None Remove="Localization\Images\Stamps_ja\Standard\void.png" />
+    <None Remove="Localization\Images\Stamps\Dynamics\received-01.png" />
+    <None Remove="Localization\Images\Stamps\Dynamics\received.png" />
+    <None Remove="Localization\Images\Stamps\Dynamics\reviewed-01.png" />
+    <None Remove="Localization\Images\Stamps\Dynamics\reviewed.png" />
+    <None Remove="Localization\Images\Stamps\Dynamics\revised-01.png" />
+    <None Remove="Localization\Images\Stamps\Dynamics\revised.png" />
+    <None Remove="Localization\Images\Stamps\Sign\checkMark.png" />
+    <None Remove="Localization\Images\Stamps\Sign\crossMark.png" />
+    <None Remove="Localization\Images\Stamps\Sign\initialHere.png" />
+    <None Remove="Localization\Images\Stamps\Sign\signHere.png" />
+    <None Remove="Localization\Images\Stamps\Sign\witness.png" />
+    <None Remove="Localization\Images\Stamps\Standard\approved.png" />
+    <None Remove="Localization\Images\Stamps\Standard\completed.png" />
+    <None Remove="Localization\Images\Stamps\Standard\confidential.png" />
+    <None Remove="Localization\Images\Stamps\Standard\draft.png" />
+    <None Remove="Localization\Images\Stamps\Standard\final.png" />
+    <None Remove="Localization\Images\Stamps\Standard\forComment.png" />
+    <None Remove="Localization\Images\Stamps\Standard\forPublicRelease.png" />
+    <None Remove="Localization\Images\Stamps\Standard\informationsOnly.png" />
+    <None Remove="Localization\Images\Stamps\Standard\notApproved.png" />
+    <None Remove="Localization\Images\Stamps\Standard\notForPublicRelease.png" />
+    <None Remove="Localization\Images\Stamps\Standard\preliminaryResults.png" />
+    <None Remove="Localization\Images\Stamps\Standard\void.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Localization\Images\Stamps_ja\Dynamics\received-01.png" />
+    <EmbeddedResource Include="Localization\Images\Stamps_ja\Dynamics\received.png" />
+    <EmbeddedResource Include="Localization\Images\Stamps_ja\Dynamics\reviewed-01.png" />
+    <EmbeddedResource Include="Localization\Images\Stamps_ja\Dynamics\reviewed.png" />
+    <EmbeddedResource Include="Localization\Images\Stamps_ja\Dynamics\revised-01.png" />
+    <EmbeddedResource Include="Localization\Images\Stamps_ja\Dynamics\revised.png" />
+    <EmbeddedResource Include="Localization\Images\Stamps_ja\Sign\checkMark.png" />
+    <EmbeddedResource Include="Localization\Images\Stamps_ja\Sign\crossMark.png" />
+    <EmbeddedResource Include="Localization\Images\Stamps_ja\Sign\initialHere.png" />
+    <EmbeddedResource Include="Localization\Images\Stamps_ja\Sign\signHere.png" />
+    <EmbeddedResource Include="Localization\Images\Stamps_ja\Sign\witness.png" />
+    <EmbeddedResource Include="Localization\Images\Stamps_ja\Standard\approved.png" />
+    <EmbeddedResource Include="Localization\Images\Stamps_ja\Standard\completed.png" />
+    <EmbeddedResource Include="Localization\Images\Stamps_ja\Standard\confidential.png" />
+    <EmbeddedResource Include="Localization\Images\Stamps_ja\Standard\draft.png" />
+    <EmbeddedResource Include="Localization\Images\Stamps_ja\Standard\final.png" />
+    <EmbeddedResource Include="Localization\Images\Stamps_ja\Standard\forComment.png" />
+    <EmbeddedResource Include="Localization\Images\Stamps_ja\Standard\forPublicRelease.png" />
+    <EmbeddedResource Include="Localization\Images\Stamps_ja\Standard\informationsOnly.png" />
+    <EmbeddedResource Include="Localization\Images\Stamps_ja\Standard\notApproved.png" />
+    <EmbeddedResource Include="Localization\Images\Stamps_ja\Standard\notForPublicRelease.png" />
+    <EmbeddedResource Include="Localization\Images\Stamps_ja\Standard\preliminaryResults.png" />
+    <EmbeddedResource Include="Localization\Images\Stamps_ja\Standard\void.png" />
+    <EmbeddedResource Include="Localization\Images\Stamps\Dynamics\received-01.png" />
+    <EmbeddedResource Include="Localization\Images\Stamps\Dynamics\received.png" />
+    <EmbeddedResource Include="Localization\Images\Stamps\Dynamics\reviewed-01.png" />
+    <EmbeddedResource Include="Localization\Images\Stamps\Dynamics\reviewed.png" />
+    <EmbeddedResource Include="Localization\Images\Stamps\Dynamics\revised-01.png" />
+    <EmbeddedResource Include="Localization\Images\Stamps\Dynamics\revised.png" />
+    <EmbeddedResource Include="Localization\Images\Stamps\Sign\checkMark.png" />
+    <EmbeddedResource Include="Localization\Images\Stamps\Sign\crossMark.png" />
+    <EmbeddedResource Include="Localization\Images\Stamps\Sign\initialHere.png" />
+    <EmbeddedResource Include="Localization\Images\Stamps\Sign\signHere.png" />
+    <EmbeddedResource Include="Localization\Images\Stamps\Sign\witness.png" />
+    <EmbeddedResource Include="Localization\Images\Stamps\Standard\approved.png" />
+    <EmbeddedResource Include="Localization\Images\Stamps\Standard\completed.png" />
+    <EmbeddedResource Include="Localization\Images\Stamps\Standard\confidential.png" />
+    <EmbeddedResource Include="Localization\Images\Stamps\Standard\draft.png" />
+    <EmbeddedResource Include="Localization\Images\Stamps\Standard\final.png" />
+    <EmbeddedResource Include="Localization\Images\Stamps\Standard\forComment.png" />
+    <EmbeddedResource Include="Localization\Images\Stamps\Standard\forPublicRelease.png" />
+    <EmbeddedResource Include="Localization\Images\Stamps\Standard\informationsOnly.png" />
+    <EmbeddedResource Include="Localization\Images\Stamps\Standard\notApproved.png" />
+    <EmbeddedResource Include="Localization\Images\Stamps\Standard\notForPublicRelease.png" />
+    <EmbeddedResource Include="Localization\Images\Stamps\Standard\preliminaryResults.png" />
+    <EmbeddedResource Include="Localization\Images\Stamps\Standard\void.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Localization" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.1.1" />
+    <PackageReference Include="GrapeCity.Documents.Common.Windows" Version="4.2.0.727" />
+    <PackageReference Include="GrapeCity.Documents.Pdf" Version="4.2.0.727" />
+    <PackageReference Include="GrapeCity.Documents.Pdf.Resources" Version="4.2.0.727" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR" Version="1.1.0" />
+    <PackageReference Include="protobuf-net" Version="3.0.29" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Localization\ImagesTable.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ImagesTable.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Localization\StringsTable.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>StringsTable.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Localization\ImagesTable.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ImagesTable.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Localization\StringsTable.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>StringsTable.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>  
+
+</Project>
